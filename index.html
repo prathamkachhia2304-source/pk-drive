@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MyCloud Drive · Personal File Vault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="drive-container">
+        <div class="drive-header">
+            <div class="logo">
+                <h1>📁 MyCloud Drive</h1>
+                <p>🔒 Files save automatically · Reload safe</p>
+            </div>
+            <div class="storage-stats" id="storageStats">
+                💾 0 KB used · 0 files
+            </div>
+        </div>
+
+        <div class="upload-panel">
+            <div class="upload-btn-wrapper">
+                <button class="custom-upload" id="uploadBtnTrigger">➕ Upload file(s)</button>
+                <input type="file" id="fileInput" multiple />
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="🔍 Search by filename..." autocomplete="off">
+            </div>
+            <div class="action-buttons">
+                <button class="icon-btn danger" id="clearAllBtn">🗑️ Clear all</button>
+                <button class="icon-btn" id="exportBackupBtn">💾 Backup</button>
+                <button class="icon-btn" id="importBackupBtn">📂 Restore</button>
+                <input type="file" id="importFileInput" accept=".json" style="display: none;" />
+            </div>
+        </div>
+
+        <div class="file-section">
+            <div class="view-header">
+                <span style="font-weight:500;">📄 Your documents & files</span>
+                <div class="view-toggles">
+                    <button class="view-btn active" id="gridViewBtn">🔲 Grid</button>
+                    <button class="view-btn" id="listViewBtn">📋 List</button>
+                </div>
+            </div>
+            <div id="fileContainer" class="file-grid"></div>
+        </div>
+    </div>
+    <div id="toastMsg" class="toast-msg" style="opacity:0; visibility:hidden;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
